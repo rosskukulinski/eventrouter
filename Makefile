@@ -14,8 +14,8 @@
 
 TARGET = eventrouter
 BUILDMNT = /go/src/github.com/heptio/$(TARGET)
-REGISTRY ?= gcr.io/heptio-images
-VERSION ?= v0.1
+REGISTRY ?= rosskukulinski
+VERSION ?= v0.1-2
 IMAGE = $(REGISTRY)/$(BIN)
 BUILD_IMAGE ?= golang:1.7-alpine
 DOCKER ?= docker
@@ -31,7 +31,7 @@ container:
 
 # TODO: Determine tagging mechanics
 push:
-	docker -- push $(REGISTRY)/$(TARGET)
+	docker push $(REGISTRY)/$(TARGET)
 
 .PHONY: all local container push
 
